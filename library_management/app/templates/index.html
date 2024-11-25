@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Welcome to Library Management System</h1>
+{% if current_user.is_authenticated %}
+    <p>Hello, {{ current_user.username }}!</p>
+{% else %}
+    <p>Please <a href="{{ url_for('main.login') }}">login</a> to continue.</p>
+{% endif %}
+{% endblock %} 
